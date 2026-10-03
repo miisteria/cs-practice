@@ -25,3 +25,5 @@ print(error)
 print(above)
 print(f"{max_temp:.1f}")
 print(f"{sr:.1f}")
+
+
