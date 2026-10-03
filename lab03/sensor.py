@@ -23,10 +23,18 @@ print(above)
 print(f"{max_temp:.1f}")
 print(f"{sr:.1f}")
 
+<<<<<<< HEAD
+=======
+#Проверка:
+>>>>>>> b35e076 (a log has been added)
 # ввод:
 # 25
 # 5
 # 24.5
+<<<<<<< HEAD
+=======
+# 30.1
+>>>>>>> b35e076 (a log has been added)
 # error
 # 19
 # 27.3
