@@ -22,3 +22,17 @@ print(error)
 print(above)
 print(f"{max_temp:.1f}")
 print(f"{sr:.1f}")
+
+# ввод:
+# 25
+# 5
+# 24.5
+# error
+# 19
+# 27.3
+# вывод:
+# 5
+# 1
+# 2
+# 30.1
+# 25.2
