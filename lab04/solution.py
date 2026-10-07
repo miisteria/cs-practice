@@ -22,3 +22,5 @@ def above_average(names, scores):
         if scores[i] > avg:
             result.append(names[i])
     return result
+
+
