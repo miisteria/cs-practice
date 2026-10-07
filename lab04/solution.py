@@ -6,3 +6,12 @@ def average(scores):
     if len(scores) == 0:
         return 0.0
     return round(sum(scores) / len(scores), 2)
+def ranking(names, scores):
+    result = []
+    for i in range(len(scores)):
+        result.append((scores[i], names[i]))
+    result.sort(reverse=True)
+    answer = []
+    for i in range(len(result)):
+        answer.append(result[i][1])
+    return answer
