@@ -9,8 +9,13 @@ def average(scores):
 def ranking(names, scores):
     result = []
     for i in range(len(scores)):
-        result.append((scores[i], names[i]))
-    result.sort(reverse=True)
+        result.append([scores[i], names[i]])
+    for i in range(len(result)):
+        for j in range(i + 1, len(result)):
+            if result[j][0] > result[i][0]:
+                temp = result[i]
+                result[i] = result[j]
+                result[j] = temp
     answer = []
     for i in range(len(result)):
         answer.append(result[i][1])
