@@ -15,3 +15,10 @@ def ranking(names, scores):
     for i in range(len(result)):
         answer.append(result[i][1])
     return answer
+def above_average(names, scores):
+    avg = average(scores)
+    result = []
+    for i in range(len(scores)):
+        if scores[i] > avg:
+            result.append(names[i])
+    return result
