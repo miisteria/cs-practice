@@ -24,3 +24,25 @@ def block(
     result = array[np.ix_(rows, columns)]
 
     return np.round(result, 6).tolist()
+
+def column_means(matrix: list[list[float]]) -> list[float]:
+    array = np.asarray(matrix, dtype=float)
+
+    if array.size == 0:
+        return []
+
+    means = array.mean(axis=0)
+
+    return np.round(means, 6).tolist()
+
+
+def column_range(matrix: list[list[float]], column: int) -> float:
+    array = np.asarray(matrix, dtype=float)
+
+    if array.size == 0:
+        return 0.0
+
+    values = array[:, column]
+    result = values.max() - values.min()
+
+    return float(np.round(result, 6))
