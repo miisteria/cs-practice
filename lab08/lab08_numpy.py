@@ -83,3 +83,127 @@ center = temperatures[0:2, 1:3]
 print("Центральный фрагмент:")
 print(center)
 print("Его форма:", center.shape)
+
+# Задание 4. Прямоугольные срезы
+
+matrix = np.arange(1, 26).reshape(5, 5)
+# Создаём числа от 1 до 25 и размещаем в таблице 5 × 5.
+
+print("Задание 4")
+print("Исходная матрица:")
+print(matrix)
+
+first_rows = matrix[:3, :]
+# Первые три строки, все столбцы.
+
+print("Первые три строки:")
+print(first_rows)
+print("Форма:", first_rows.shape)
+
+last_rows = matrix[-2:, :]
+# Последние две строки, все столбцы.
+
+print("Последние две строки:")
+print(last_rows)
+print("Форма:", last_rows.shape)
+
+first_columns = matrix[:, :2]
+# Все строки, первые два столбца.
+
+print("Первые два столбца:")
+print(first_columns)
+print("Форма:", first_columns.shape)
+
+fragment = matrix[1:4, 2:5]
+# Строки с индексами 1, 2, 3; столбцы с индексами 2, 3, 4.
+
+print("Фрагмент:")
+print(fragment)
+print("Форма:", fragment.shape)
+
+corner = matrix[-2:, -2:]
+# Последние две строки и последние два столбца.
+
+print("Правый нижний блок:")
+print(corner)
+print("Форма:", corner.shape)
+
+
+# Задание 5. Изменение массива через срезы
+
+# Сначала примеры из условия:
+
+vector = np.array([10, 20, 30, 40, 50])
+vector[1:4] = 0
+# Заменяем элементы с индексами 1, 2, 3 на нули.
+
+print("Задание 5")
+print("Пример с вектором:", vector)
+
+small_matrix = np.arange(1, 10).reshape(3, 3)
+small_matrix[0, :] = -1
+# Заменяем всю первую строку на -1.
+
+small_matrix[1:, 1:] = 9
+# В строках с индекса 1 и столбцах с индекса 1 ставим 9.
+
+print("Пример с матрицей:")
+print(small_matrix)
+
+
+changed_hours = hours.copy()
+# Создаём независимую копию, чтобы сохранить исходный hours.
+
+changed_hours[2:5] = 99
+# Элементы с индексами 2, 3, 4 заменяем на 99.
+
+changed_hours[::2] = -1
+# Затем каждый второй элемент, начиная с первого, заменяем на -1.
+
+print("Изменённый hours:", changed_hours)
+print("Исходный hours:", hours)
+
+
+changed_matrix = matrix.copy()
+# Создаём независимую копию исходной матрицы.
+
+changed_matrix[1, :] = 0
+# Вторая строка — нули.
+
+changed_matrix[:, -1] = -1
+# Последний столбец — значения -1.
+
+changed_matrix[1:4, 1:4] = 100
+# Центральный блок 3 × 3 — значения 100.
+
+print("Изменённая матрица:")
+print(changed_matrix)
+
+print("Исходная матрица:")
+print(matrix)
+
+
+# Задание 6. Изменение формы
+
+numbers = np.arange(0, 12)
+# Числа от 0 до 11: всего 12 элементов.
+
+table = numbers.reshape(3, 4)
+# Располагаем их в 3 строки по 4 элемента.
+
+transposed = table.T
+# Транспонируем: строки становятся столбцами.
+
+print("Задание 6")
+print("Форма numbers:", numbers.shape)
+print("Форма table:", table.shape)
+print("Форма transposed:", transposed.shape)
+
+print("Таблица:")
+print(table)
+
+print("После транспонирования:")
+print(transposed)
+
+# reshape(3, 4) работает, потому что 3 * 4 = 12 элементов.
+# reshape(5, 3) вызовет ошибку: нужно 15 элементов, а у нас 12.
